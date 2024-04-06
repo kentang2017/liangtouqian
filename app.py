@@ -9,6 +9,11 @@ from contextlib import contextmanager, redirect_stdout
 tiangan = '甲乙丙丁戊己庚辛壬癸'
 dizhi = '子丑寅卯辰巳午未申酉戌亥'
 
+def get_file_content_as_string1(path):
+    url = 'https://raw.githubusercontent.com/kentang2017/kinliuren/master/' + path
+    response = urllib.request.urlopen(url)
+    return response.read().decode("utf-8")
+
 @contextmanager
 def st_capture(output_func):
     with StringIO() as stdout, redirect_stdout(stdout):
@@ -121,3 +126,7 @@ with ertou:
         print("   ")
         print("收成")
         print(two_gan_text.get("收成"))
+        
+with links:
+    st.header('連接')
+    st.markdown(get_file_content_as_string1("update.md"))
