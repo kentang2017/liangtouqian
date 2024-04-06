@@ -75,7 +75,7 @@ ertou,links = st.tabs([' 兩頭鉗 ', ' 連接 '])
 with ertou:
     st.header('兩頭鉗')
     cctext = gangzhi(y,m,d,h,min)
-    two_gan_text = data.get(cctext.get("干支")[0][0]+cctext.get("干支")[3][0] )
+    two_gan_text = data.get(cctext[0][0]+cctext[3][0] )
     output6 = st.empty()
     with st_capture(output6.code):
         print("{}年{}月{}日{}時".format(cctext.get("干支")[0], cctext.get("干支")[1], cctext.get("干支")[2], cctext.get("干支")[3] ))
