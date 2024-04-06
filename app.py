@@ -7,6 +7,9 @@ from ephem import Date
 tiangan = '甲乙丙丁戊己庚辛壬癸'
 dizhi = '子丑寅卯辰巳午未申酉戌亥'
 
+def jiazi(self):
+    return [tiangan[x % len(tiangan)] + dizhi[x % len(dizhi)] for x in range(60)]
+    
 def gangzhi(year, month, day, hour, minute):
     if year == 0:
         return ["無效"]
