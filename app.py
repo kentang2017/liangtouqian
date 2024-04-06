@@ -9,6 +9,32 @@ dizhi = '子丑寅卯辰巳午未申酉戌亥'
 
 def jiazi(self):
     return [tiangan[x % len(tiangan)] + dizhi[x % len(dizhi)] for x in range(60)]
+
+def multi_key_dict_get(d, k):
+    for keys, v in d.items():
+        if k in keys:
+            return v
+    return None
+
+def new_list(olist, o):
+    a = olist.index(o)
+    res1 = olist[a:] + olist[:a]
+    return res1
+
+#五鼠遁，起子時
+def find_lunar_hour(day):
+    fiverats = {
+    tuple(list('甲己')):'甲子',
+    tuple(list('乙庚')):'丙子',
+    tuple(list('丙辛')):'戊子',
+    tuple(list('丁壬')):'庚子',
+    tuple(list('戊癸')):'壬子'
+    }
+    if multi_key_dict_get(fiverats, day[0]) == None:
+        result = multi_key_dict_get(fiverats, day[1])
+    else:
+        result = multi_key_dict_get(fiverats, day[0])
+    return dict(zip(list(dizhi), new_list(jiazi(), result)[:12]))
     
 def gangzhi(year, month, day, hour, minute):
     if year == 0:
