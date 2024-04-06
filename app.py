@@ -3,6 +3,7 @@ import pendulum as pdlm
 from sxtwl import fromSolar
 import pickle
 from ephem import Date
+from contextlib import contextmanager, redirect_stdout
 
 tiangan = '甲乙丙丁戊己庚辛壬癸'
 dizhi = '子丑寅卯辰巳午未申酉戌亥'
