@@ -7,7 +7,7 @@ from ephem import Date
 tiangan = '甲乙丙丁戊己庚辛壬癸'
 dizhi = '子丑寅卯辰巳午未申酉戌亥'
 
-def jiazi(self):
+def jiazi():
     return [tiangan[x % len(tiangan)] + dizhi[x % len(dizhi)] for x in range(60)]
 
 def multi_key_dict_get(d, k):
