@@ -93,10 +93,10 @@ with ertou:
     two_gan_text = data.get(cctext[0][0]+cctext[3][0] )
     output6 = st.empty()
     with st_capture(output6.code):
-        print("{}年{}月{}日{}時".format(cctext.get("干支")[0], cctext.get("干支")[1], cctext.get("干支")[2], cctext.get("干支")[3] ))
+        print("{}年{}月{}日{}時".format(cctext[0], cctext[1], cctext[2], cctext[3] ))
         print("   ")
         print("   ")
-        print(cctext.get("干支")[0][0]+cctext.get("干支")[3][0] )
+        print(cctext[0][0]+cctext[3][0] )
         print("判斷")
         print(two_gan_text.get("判斷"))
         print("   ")
