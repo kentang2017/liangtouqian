@@ -7,6 +7,19 @@ from ephem import Date
 tiangan = '甲乙丙丁戊己庚辛壬癸'
 dizhi = '子丑寅卯辰巳午未申酉戌亥'
 
+@contextmanager
+def st_capture(output_func):
+    with StringIO() as stdout, redirect_stdout(stdout):
+        old_write = stdout.write
+
+        def new_write(string):
+            ret = old_write(string)
+            output_func(stdout.getvalue())
+            return ret
+        
+        stdout.write = new_write
+        yield
+
 def jiazi():
     return [tiangan[x % len(tiangan)] + dizhi[x % len(dizhi)] for x in range(60)]
 
