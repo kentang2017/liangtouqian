@@ -43,7 +43,7 @@ def new_list(olist, o):
     return res1
 
 #五虎遁，起正月
-def find_lunar_month(self, year):
+def find_lunar_month(year):
     fivetigers = {
     tuple(list('甲己')):'丙寅',
     tuple(list('乙庚')):'戊寅',
@@ -51,11 +51,11 @@ def find_lunar_month(self, year):
     tuple(list('丁壬')):'壬寅',
     tuple(list('戊癸')):'甲寅'
     }
-    if self.multi_key_dict_get(fivetigers, year[0]) == None:
-        result = self.multi_key_dict_get(fivetigers, year[1])
+    if multi_key_dict_get(fivetigers, year[0]) == None:
+        result = multi_key_dict_get(fivetigers, year[1])
     else:
-        result = self.multi_key_dict_get(fivetigers, year[0])
-        return dict(zip(range(1,13), self.new_list(self.jiazi(), result)[:12]))
+        result = multi_key_dict_get(fivetigers, year[0])
+        return dict(zip(range(1,13), new_list(jiazi(), result)[:12]))
     
 
 #五鼠遁，起子時
