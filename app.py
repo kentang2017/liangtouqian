@@ -72,7 +72,11 @@ def find_lunar_hour(day):
     else:
         result = multi_key_dict_get(fiverats, day[0])
     return dict(zip(list(dizhi), new_list(jiazi(), result)[:12]))
-    
+
+def lunar_date_d(year, month, day):
+    day = fromSolar(year, month, day)
+    return {"年":day.getLunarYear(),  "月": day.getLunarMonth(), "日":day.getLunarDay()}
+
 def gangzhi(year, month, day, hour, minute):
     if year == 0:
         return ["無效"]
@@ -86,7 +90,7 @@ def gangzhi(year, month, day, hour, minute):
     cdate = fromSolar(dd[0], dd[1], dd[2])
     yTG,mTG,dTG,hTG = "{}{}".format(tiangan[cdate.getYearGZ().tg], dizhi[cdate.getYearGZ().dz]), "{}{}".format(tiangan[cdate.getMonthGZ().tg],dizhi[cdate.getMonthGZ().dz]), "{}{}".format(tiangan[cdate.getDayGZ().tg], dizhi[cdate.getDayGZ().dz]), "{}{}".format(tiangan[cdate.getHourGZ(dd[3]).tg], dizhi[cdate.getHourGZ(dd[3]).dz])
     if year < 1900:
-        mTG1 = find_lunar_month(yTG).get(self.lunar_date_d(year, month, day).get("月"))
+        mTG1 = find_lunar_month(yTG).get(lunar_date_d(year, month, day).get("月"))
     else:
         mTG1 = mTG
     hTG1 = find_lunar_hour(dTG).get(hTG[1])
