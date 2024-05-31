@@ -111,7 +111,7 @@ with st.sidebar:
     h = int(pp[0])
     min = int(pp[1])
 
-ertou,links = st.tabs([' 兩頭鉗 ', ' 連接 '])
+ertou,links = st.tabs([' 兩頭鉗 ', ' 連接 '], unsafe_allow_html=True)
 
 with ertou:
     st.header('兩頭鉗')
