@@ -111,7 +111,7 @@ with st.sidebar:
     h = int(pp[0])
     min = int(pp[1])
 
-ertou,links = st.tabs([' 兩頭鉗 ', ' 連接 '], unsafe_allow_html=True)
+ertou,links = st.tabs([' 兩頭鉗 ', ' 連接 '])
 
 with ertou:
     st.header('兩頭鉗')
@@ -150,4 +150,4 @@ with ertou:
         
 with links:
     st.header('連接')
-    st.markdown(get_file_content_as_string1("update.md"))
+    st.markdown(get_file_content_as_string1("update.md"), unsafe_allow_html=True)
