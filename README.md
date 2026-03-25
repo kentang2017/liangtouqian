@@ -1,7 +1,7 @@
 # 🔮 堅兩頭鉗 · Liangtouqian — 兩頭鉗分定經
 
 <p align="center">
-  <b>年干時干，兩頭鉗定一生命格 · Pincer the Destiny by Year Stem & Hour Stem</b><br>
+  <b>年干時干拼合，兩頭鉗定一生命格 · Pincer the Destiny by only "Year Stem" & "Hour Stem"</b><br>
   <i>兩頭鉗分定經 | Liǎng Tóu Qián Fēn Dìng Jīng | Two-Headed Pincers Destiny Scripture</i>
 </p>
 
