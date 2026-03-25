@@ -22,7 +22,7 @@
 ---
 
 <p align="center">
-  <img src="https://github.com/kentang2017/liangtouqian/blob/master/pic/Untitled-44.png?raw=true" alt="兩頭鉗分定經排盤截圖" width="80%">
+  <img width="1978" height="906" alt="image" src="https://github.com/user-attachments/assets/a3155885-6440-495a-b273-53424ec10157" />
 </p>
 
 ---
