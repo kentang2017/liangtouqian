@@ -1,4 +1,3 @@
-import os, urllib
 import streamlit as st
 import pendulum as pdlm
 from sxtwl import fromSolar
@@ -9,11 +8,6 @@ from contextlib import contextmanager, redirect_stdout
 
 tiangan = '甲乙丙丁戊己庚辛壬癸'
 dizhi = '子丑寅卯辰巳午未申酉戌亥'
-
-def get_file_content_as_string1(path):
-    url = 'https://raw.githubusercontent.com/kentang2017/kinliuren/master/' + path
-    response = urllib.request.urlopen(url)
-    return response.read().decode("utf-8")
 
 @contextmanager
 def st_capture(output_func):
@@ -159,4 +153,44 @@ with ertou:
 
 with links:
     st.header('連接')
-    st.markdown(get_file_content_as_string1("update.md"), unsafe_allow_html=True)
+    links_md = """# 開發者資訊
+微信公眾號 "探究三式"
+
+<p align="center">
+  <a href="https://iching.streamlit.app/">
+    <img src="https://raw.githubusercontent.com/kentang2017/ichingshifa/master/pic/iching.png" style="max-width: 100%; height: auto;">
+  </a>
+  <a href="https://kintaiyi.streamlit.app/">
+    <img src="https://raw.githubusercontent.com/kentang2017/kintaiyi/master/pic/Untitled-1.png" style="max-width: 100%; height: auto;">
+  </a>
+  <a href="https://kinliuren.streamlit.app/">
+    <img src="https://raw.githubusercontent.com/kentang2017/kinliuren/master/pic/Untitled-33.png" style="max-width: 100%; height: auto;">
+  </a>
+  <a href="https://kinqimen.streamlit.app/">
+    <img src="https://raw.githubusercontent.com/kentang2017/kinqimen/master/pic/Untitled-22.png" style="max-width: 100%; height: auto;">
+  </a>
+  <a href="https://kinwuzhao.streamlit.app/">
+    <img src="https://raw.githubusercontent.com/kentang2017/kinwuzhao/refs/heads/main/pic/wuzhao.png" style="max-width: 100%; height: auto;">
+  </a>
+  <a href="https://kintaixuan.streamlit.app/">
+    <img src="https://raw.githubusercontent.com/kentang2017/taixuanshifa/master/pic/taixuan.png" style="max-width: 100%; height: auto;">
+  </a>
+  <a href="https://kinwangji.streamlit.app/">
+    <img src="https://raw.githubusercontent.com/kentang2017/kinwangji/main/pic/kwj.png" style="max-width: 100%; height: auto;">
+  </a>
+  <a href="https://jingjue.streamlit.app/">
+    <img src="https://raw.githubusercontent.com/kentang2017/jingjue/master/pic/jingjue.png" style="max-width: 100%; height: auto;">
+  </a>
+  <a href="https://liangtouqian.streamlit.app/">
+    <img src="https://raw.githubusercontent.com/kentang2017/liangtouqian/master/pic/Untitled-44.png" style="max-width: 100%; height: auto;">
+  </a>
+  <img src="https://raw.githubusercontent.com/kentang2017/kintaiyi/master/pic/20231205113526.jpg" style="max-width: 100%; height: auto">
+</p>
+
+如有任何建議或合作事宜，可加本人微信聯繫
+或搜 gnatnek (請註明是在github加我的)
+
+或 加入QQ群組 堅三式軟件交流群 (搜群號 770621021或 "堅三式軟件交流群")
+聯繫通訊
+"""
+    st.markdown(links_md, unsafe_allow_html=True)
